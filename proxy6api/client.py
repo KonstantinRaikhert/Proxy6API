@@ -3,9 +3,9 @@ from typing import Dict, Union
 
 import requests
 from requests.exceptions import ConnectTimeout
-from settings.bases import COUNTRIES_HUMAN_NAME_KEYS, COUNTRIES_ISO2_KEYS
-from settings.config import PROXY_6_API_KEY
-from settings.errors import CODES_OF_ERRORS
+
+from proxy6api.settings.bases import COUNTRIES_HUMAN_NAME_KEYS, COUNTRIES_ISO2_KEYS
+from proxy6api.settings.errors import CODES_OF_ERRORS
 
 
 @dataclass
@@ -206,9 +206,3 @@ class Proxy_6_Client:
         if not isinstance(response, dict):
             return response
         return f"{response['balance']} {response['currency']}"
-
-
-if __name__ == "__main__":
-    api_url = Proxy_6_API_URL(api_key=PROXY_6_API_KEY)
-    client = Proxy_6_Client(api_url=api_url)
-    print(client.get_proxy())
