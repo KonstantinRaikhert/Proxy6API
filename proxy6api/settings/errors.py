@@ -1,4 +1,9 @@
 CODES_OF_ERRORS = {
+    10: "Couldn't decode the text into json - Не удалось расшифровать текст в json.",
+    20: "A Connection error occurred - Произошла ошибка подключения.",
+    25: "The request timed out while trying to connect to the remote server. "
+    "Requests that produced this error are safe to retry. - Время ожидания запроса истекло "
+    "при попытке подключения к удаленному серверу. Запросы, вызвавшие эту ошибку, можно безопасно повторить",
     30: "Error unknown - Неизвестная ошибка",
     100: "Error key - Ошибка авторизации, неверный ключ ",
     105: "Error ip - Доступ к API произошел с неверного IP (если включено "
