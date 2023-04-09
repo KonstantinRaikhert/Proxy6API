@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "proxy6api"
-version = "0.1.2"
+version = "1.0.0"
 description = "This is unofficial software for using api with proxy 6.net"
 authors = ["Konstantin Raikhert <raikhert13@gmail.com>"]
 license = "MIT"

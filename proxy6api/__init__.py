@@ -1,5 +1,5 @@
 """
-Proxy6.net API Library
+Unofficial Proxy6.net API Library
 ~~~~~~~~~~~~~~~~~~~~~
 
 Api allows you to integrate proxy purchase into your service or application.
@@ -13,58 +13,29 @@ The answer received in different coding will lead to operation errors.
    >>> API_KEY = os.getenv("PROXY_6_API_KEY")
    >>> client = Proxy_6_Client(api_key=API_KEY)
    >>> client.get_proxy()
-   {'status': 'yes',
-    'user_id': '495666',
-    'balance': '21.68',
-    'currency': 'RUB',
-    'date_mod': '2023-04-08 20:05:26',
-    'list_count': 2,
-    'list': {
-        '21358215':
-            {'id': '21358215',
-            'version': '6',
-            'ip': '2a06:c006:ab5f:3293:7acf:07af:2c9a:1952',
-            'host': '217.29.63.40',
-            'port': '10212',
-            'user': 'BWqqWK',
-            'pass': 'VErw3n',
-            'type': 'http',
-            'country': 'ru',
-            'date': '2023-04-08 20:05:26',
-            'date_end': '2023-04-09 20:05:26',
-            'unixtime': 1680973526,
-            'unixtime_end': 1681059926,
-            'descr': '',
-            'active': '1'
-            },
-        '21358216':
-            {'id': '21358216',
-            'version': '6',
-            'ip': '2a06:c006:510f:be73:2468:82a3:4a4a:d27d',
-            'host': '217.29.63.40',
-            'port': '10213',
-            'user': 'BWqqWK',
-            'pass': 'VErw3n',
-            'type': 'http',
-            'country': 'ru',
-            'date': '2023-04-08 20:05:26',
-            'date_end': '2023-04-09 20:05:26',
-            'unixtime': 1680973526,
-            'unixtime_end': 1681059926,
-            'descr': '',
-            'active': '1'
-            }
-        },
-    'page': 1
-    }
+
+   >>> ProxyInfo(status='yes', user_id=495666, balance=16.88, currency='RUB', list_count=4,
+   date_mod=datetime.datetime(2023, 4, 9, 19, 12, 20), proxies_list=[ProxyItemInfo(id=21371087,
+   ip='2a06:c006:e8e0:a6b4:9e4c:05d2:2fa1:afc5', host='217.29.63.40', port='10449', user='ozgK95',
+   password='tjQpP6', proxy_type='http', country='ru', date=datetime.datetime(2023, 4, 9, 19, 10, 51),
+   date_end=datetime.datetime(2023, 4, 10, 19, 10, 51), unixtime=1681056651, unixtime_end=1681143051,
+   descr='', active=True), ProxyItemInfo(id=21370682, ip='2a06:c006:2bd8:3f81:d1ce:7354:4442:98db',
+   host='217.29.63.40', port='10435', user='tpe85S', password='b29S0f', proxy_type='socks', country='ru',
+   date=datetime.datetime(2023, 4, 9, 18, 25, 20), date_end=datetime.datetime(2023, 4, 10, 18, 25, 20),
+   unixtime=1681053920, unixtime_end=1681140320, descr='test', active=True), ProxyItemInfo(id=21371081,
+   ip='2a06:c006:17df:0ee1:43a3:2679:b194:6ad5', host='217.29.63.40', port='10448', user='PtSxYC', password='KC1uuj',
+   proxy_type='http', country='ru', date=datetime.datetime(2023, 4, 9, 19, 9, 6),
+   date_end=datetime.datetime(2023, 4, 10, 19, 9, 6), unixtime=1681056546, unixtime_end=1681142946,
+   descr='', active=True), ProxyItemInfo(id=21371091, ip='2a06:c006:524f:862d:b3bc:e923:e995:de4b',
+   host='217.29.63.40', port='10450', user='THvMEV', password='kK3y5q', proxy_type='http', country='ru',
+   date=datetime.datetime(2023, 4, 9, 19, 12, 20), date_end=datetime.datetime(2023, 4, 10, 19, 12, 20),
+   unixtime=1681056740, unixtime_end=1681143140, descr='', active=True)], page=1)
 
     or if error (example):
 
     >>> client.get_proxy()
-    {'status': 'no',
-    'error_id': 100,
-    'error': 'Error key - Ошибка авторизации, неверный ключ '
-    }
+
+    >>> ErrorInfo(error_id=100, error='Error key - Ошибка авторизации, неверный ключ ')
 
     Available methods:
         get_price - Getting information about the cost of the order;
